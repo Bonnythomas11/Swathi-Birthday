@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy 24th Birthday Swathi! 🎂✨</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --emerald-deep: #143d2b;
+      --emerald-mid: #246346;
+      --kasavu-gold: #d49a2a;
+      --gold-bright: #f4be49;
+      --plum-accent: #7a3558;
+      --cream-bg: #fdfaf2;
+      --text-dark: #1f1912;
+      --text-soft: #5c4d3c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(165deg, #fdfaf2 0%, #f5ebd6 28%, #e4efe6 62%, #f3e4ec 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      padding-bottom: calc(105px + env(safe-area-inset-bottom, 20px));
+      position: relative;
+    }
+
+    /* Ambient Bokeh & Floating Elements */
+    .bg-lights {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bokeh-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      animation: floatBokeh 11s ease-in-out infinite alternate;
+      opacity: 0.55;
+    }
+    .orb-gold { width: 240px; height: 240px; background: rgba(244, 190, 73, 0.35); top: -30px; right: -40px; }
+    .orb-emerald { width: 250px; height: 250px; background: rgba(36, 99, 70, 0.25); top: 40%; left: -45px; }
+    .orb-plum { width: 230px; height: 230px; background: rgba(122, 53, 88, 0.2); bottom: 10%; right: -30px; }
+
+    @keyframes floatBokeh {
+      0% { transform: translate(0, 0) scale(0.95); }
+      100% { transform: translate(22px, -18px) scale(1.08); }
+    }
+
+    .floating-charm {
+      position: absolute;
+      font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+      filter: drop-shadow(0 6px 12px rgba(20, 61, 43, 0.2));
+      animation: swayCharm 8.5s ease-in-out infinite alternate;
+      opacity: 0.78;
+      user-select: none;
+    }
+    .fc1 { top: 4%; left: 3%; animation-delay: 0s; }
+    .fc2 { top: 24%; right: 4%; animation-delay: -2.2s; }
+    .fc3 { top: 54%; left: 3%; animation-delay: -4.1s; }
+    .fc4 { top: 78%; right: 4%; animation-delay: -1.4s; }
+
+    @keyframes swayCharm {
+      0% { transform: translateY(0px) rotate(-6deg); }
+      100% { transform: translateY(-22px) rotate(6deg); }
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: clamp(14px, 4vw, 24px) 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Top Badges */
+    .header-badges {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(212, 154, 42, 0.45);
+      color: var(--emerald-deep);
+      box-shadow: 0 4px 12px rgba(20, 61, 43, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hero Title */
+    .hero-title-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sub-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.72rem, 2.5vw, 0.82rem);
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--plum-accent);
+      margin-bottom: 6px;
+    }
+
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.15rem, 8vw, 2.85rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #143d2b 0%, #b87d14 52%, #7a3558 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.16;
+      word-break: break-word;
+    }
+
+    .subtitle-note {
+      font-size: clamp(0.84rem, 2.8vw, 0.94rem);
+      color: var(--text-soft);
+      font-weight: 600;
+      margin-top: 6px;
+      padding: 0 10px;
+      line-height: 1.45;
+    }
+
+    /* 24th Milestone Banner */
+    .milestone-banner {
+      background: linear-gradient(135deg, rgba(255, 253, 247, 0.95), rgba(247, 239, 220, 0.95));
+      border: 1.5px solid rgba(212, 154, 42, 0.45);
+      border-radius: 20px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 0 8px 24px rgba(20, 61, 43, 0.1);
+      text-align: center;
+    }
+
+    .milestone-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .milestone-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--kasavu-gold);
+      line-height: 1;
+    }
+
+    .milestone-label {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--emerald-deep);
+      margin-top: 4px;
+    }
+
+    .milestone-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(212, 154, 42, 0.35);
+    }
+
+    /* Celebration Cards */
+    .celebration-card {
+      background: linear-gradient(135deg, rgba(255, 254, 249, 0.9) 0%, rgba(246, 250, 247, 0.92) 100%);
+      border-radius: 24px;
+      padding: 16px 14px;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 34px rgba(20, 61, 43, 0.14), inset 0 0 0 1.5px rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(212, 154, 42, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--emerald-mid), var(--emerald-deep));
+      color: #fdf6e3;
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(20, 61, 43, 0.3);
+    }
+
+    .card-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+      font-weight: 700;
+      color: var(--emerald-deep);
+    }
+
+    .revealed-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--emerald-deep);
+      background: #e3f4eb;
+      border: 1px solid #8fd1b1;
+      padding: 3px 10px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* Photo Carousel Viewport */
+    .carousel-viewport {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #14241c;
+      box-shadow: 0 10px 26px rgba(20, 36, 28, 0.25);
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: scale(1.02);
+      pointer-events: none;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+      pointer-events: auto;
+    }
+
+    .caption-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 36px 14px 14px;
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 28, 21, 0.88) 100%);
+      color: #fff;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .caption-chapter {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-bright);
+    }
+
+    .caption-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(212, 154, 42, 0.5);
+      background: rgba(255, 253, 247, 0.88);
+      color: var(--emerald-deep);
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+    .nav-arrow:active {
+      transform: translateY(-50%) scale(0.92);
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+
+    /* Gift Wrap Veil */
+    .gift-wrap-veil {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      background: linear-gradient(135deg, #f7e6c4 0%, #d8eadf 50%, #f3dce6 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease;
+      box-shadow: inset 0 0 35px rgba(212, 154, 42, 0.25);
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .gift-wrap-veil.opened {
+      transform: translateY(-105%) scale(0.92);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .ribbon-vertical {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 28px;
+      background: linear-gradient(90deg, #e2b14c, #c4881c, #e2b14c);
+      box-shadow: 0 0 12px rgba(196, 136, 28, 0.35);
+    }
+
+    .ribbon-horizontal {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: linear-gradient(180deg, #e2b14c, #c4881c, #e2b14c);
+      box-shadow: 0 0 12px rgba(196, 136, 28, 0.35);
+    }
+
+    .veil-badge {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 254, 250, 0.97);
+      padding: 16px 22px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(20, 61, 43, 0.25);
+      border: 2px solid var(--kasavu-gold);
+      animation: pulseBadge 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .veil-badge-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .veil-badge-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--emerald-deep);
+    }
+
+    .veil-badge-tap {
+      font-size: 0.72rem;
+      color: var(--plum-accent);
+      font-weight: 800;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(20, 61, 43, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      width: 22px;
+      border-radius: 10px;
+      background: var(--emerald-mid);
+    }
+
+    .card-footer {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+
+    .handwritten-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 1.38rem;
+      color: var(--plum-accent);
+      font-weight: 700;
+    }
+
+    /* Birthday Wish Note */
+    .fairytale-note {
+      background: linear-gradient(135deg, rgba(255, 253, 246, 0.95) 0%, rgba(244, 249, 245, 0.95) 100%);
+      border-radius: 22px;
+      padding: 20px 16px;
+      border: 2px dashed rgba(212, 154, 42, 0.55);
+      text-align: center;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 24px rgba(20, 61, 43, 0.1);
+      position: relative;
+    }
+
+    .note-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 3.2vw, 1.06rem);
+      color: #2b2116;
+      line-height: 1.62;
+      margin-bottom: 10px;
+    }
+
+    /* Interactive 24th Birthday Cake */
+    .cake-card {
+      text-align: center;
+      padding: 24px 14px;
+    }
+
+    .candles-row {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: -4px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .candle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      min-width: 48px;
+      min-height: 60px;
+      touch-action: manipulation;
+    }
+
+    .flame {
+      width: 14px;
+      height: 22px;
+      background: radial-gradient(ellipse at 50% 80%, #fff 0%, #ffe066 50%, #f57c00 100%);
+      border-radius: 50% 50% 35% 35%;
+      box-shadow: 0 0 16px #ffc107, 0 0 28px rgba(245, 124, 0, 0.5);
+      animation: flicker 0.9s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+      transition: all 0.3s ease;
+    }
+
+    .candle.blown .flame {
+      opacity: 0;
+      transform: scale(0.2) translateY(-10px);
+      pointer-events: none;
+    }
+
+    .candle.blown::after {
+      content: '💨';
+      position: absolute;
+      top: -14px;
+      font-size: 15px;
+      animation: smokePuff 0.8s ease-out forwards;
+    }
+
+    @keyframes smokePuff {
+      0% { opacity: 0.95; transform: translateY(0) scale(0.8); }
+      100% { opacity: 0; transform: translateY(-26px) scale(1.4); }
+    }
+
+    @keyframes flicker {
+      0% { transform: rotate(-2deg) scale(0.98); }
+      100% { transform: rotate(3deg) scale(1.05); }
+    }
+
+    .candle-stick {
+      width: 9px;
+      height: 32px;
+      background: repeating-linear-gradient(45deg, var(--kasavu-gold), var(--kasavu-gold) 4px, #ffffff 4px, #ffffff 8px);
+      border-radius: 3px;
+    }
+
+    .cake-top-tier {
+      width: clamp(145px, 46vw, 175px);
+      height: 48px;
+      background: linear-gradient(180deg, #f9e6be, #f2d28b);
+      margin: 0 auto;
+      border-radius: 12px 12px 4px 4px;
+      border: 2.5px solid #d49a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--emerald-deep);
+      font-size: 0.82rem;
+      letter-spacing: 1.2px;
+    }
+
+    .cake-bottom-tier {
+      width: clamp(195px, 62vw, 235px);
+      height: 60px;
+      background: linear-gradient(180deg, #246346, #143d2b);
+      margin: 0 auto;
+      border-radius: 14px 14px 8px 8px;
+      border: 2.5px solid #d49a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: #fdf6e3;
+      font-size: clamp(1rem, 3.5vw, 1.15rem);
+      letter-spacing: 1.5px;
+      box-shadow: 0 8px 24px rgba(20, 61, 43, 0.28);
+    }
+
+    .cake-hint-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 14px;
+      font-weight: 700;
+    }
+
+    .wish-banner-box {
+      display: none;
+      margin-top: 14px;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, #fef5dc, #fae6b1);
+      border-radius: 50px;
+      color: var(--emerald-deep);
+      font-weight: 800;
+      font-size: 0.84rem;
+      box-shadow: 0 4px 16px rgba(212, 154, 42, 0.25);
+      border: 1.5px solid var(--kasavu-gold);
+    }
+
+    /* Floating Music Player */
+    .music-pill-btn {
+      position: fixed;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      right: 16px;
+      z-index: 100;
+      background: linear-gradient(135deg, rgba(255, 254, 249, 0.96), rgba(247, 239, 220, 0.96));
+      border: 1.5px solid var(--kasavu-gold);
+      box-shadow: 0 6px 24px rgba(20, 61, 43, 0.25);
+      border-radius: 50px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+      touch-action: manipulation;
+    }
+    .music-pill-btn:active {
+      transform: scale(0.95);
+    }
+
+    .vinyl-icon {
+      font-size: 1.15rem;
+      animation: spinVinyl 6s linear infinite;
+      animation-play-state: paused;
+    }
+    .music-pill-btn.playing .vinyl-icon {
+      animation-play-state: running;
+    }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .music-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .music-track-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--emerald-deep);
+      line-height: 1.1;
+    }
+    .music-play-status {
+      font-size: 0.65rem;
+      color: var(--plum-accent);
+      font-weight: 700;
+    }
+
+    .equalizer-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2.5px;
+      height: 14px;
+    }
+    .eq-bar {
+      width: 3px;
+      height: 4px;
+      background: var(--emerald-mid);
+      border-radius: 2px;
+      transition: height 0.2s ease;
+    }
+    .music-pill-btn.playing .eq-bar:nth-child(1) { animation: equalize 0.8s ease-in-out infinite alternate; }
+    .music-pill-btn.playing .eq-bar:nth-child(2) { animation: equalize 0.6s ease-in-out infinite alternate 0.2s; }
+    .music-pill-btn.playing .eq-bar:nth-child(3) { animation: equalize 0.9s ease-in-out infinite alternate 0.4s; }
+
+    @keyframes equalize {
+      0% { height: 3px; }
+      100% { height: 14px; }
+    }
+  </style>
+</head>
+<body onclick="tryAutoPlayMusic()">
+
+  <!-- Audio Player mapped to your uploaded Pesamale track -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="Pesamale.mp3" type="audio/mp3" />
+    <source src="Pesamale_2.mp3" type="audio/mp3" />
+    <source src="pesamale.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Ambient Bokeh & Floating Elements -->
+  <div class="bg-lights">
+    <div class="bokeh-orb orb-gold"></div>
+    <div class="bokeh-orb orb-emerald"></div>
+    <div class="bokeh-orb orb-plum"></div>
+
+    <div class="floating-charm fc1">🌿</div>
+    <div class="floating-charm fc2">✨</div>
+    <div class="floating-charm fc3">🌸</div>
+    <div class="floating-charm fc4">🎂</div>
+  </div>
+
+  <div class="container">
+
+    <!-- Top Badges -->
+    <div class="header-badges">
+      <div class="badge-pill">🎂 Chapter 24</div>
+      <div class="badge-pill">✨ Celebrating Swathi</div>
+    </div>
+
+    <!-- Hero Title -->
+    <div class="hero-title-box">
+      <div class="sub-heading">Wishing You Joy & Grace</div>
+      <h1 class="main-title">Happy 24th Birthday, Swathi!</h1>
+      <p class="subtitle-note">Unwrap your birthday memories and celebrate 24 wonderful years of smiles & magic 🌿✨</p>
+    </div>
+
+    <!-- 24 Years Milestone Banner -->
+    <div class="milestone-banner">
+      <div class="milestone-item">
+        <span class="milestone-num">24</span>
+        <span class="milestone-label">Golden Years</span>
+      </div>
+      <div class="milestone-divider"></div>
+      <div class="milestone-item">
+        <span class="milestone-num">288</span>
+        <span class="milestone-label">Months of Joy</span>
+      </div>
+      <div class="milestone-divider"></div>
+      <div class="milestone-item">
+        <span class="milestone-num">∞</span>
+        <span class="milestone-label">Bright Dreams</span>
+      </div>
+    </div>
+
+    <!-- ==================== MEMORY GALLERY CARD ==================== -->
+    <div class="celebration-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-number">1</div>
+          <div class="card-heading">24th Birthday Moments</div>
+        </div>
+        <div class="revealed-badge" id="galleryStatus">🎁 Tap to Unwrap</div>
+      </div>
+
+      <div class="carousel-viewport" id="carouselBox" onclick="unwrapGallery()">
+        <!-- 1. Nature Portrait in Black & Gold Kurta -->
+        <img src="1000364131.jpg" alt="Swathi Portrait in Nature" class="carousel-slide active" />
+        <!-- 2. Traditional Green & Gold Pattu Pavadai with Flowers -->
+        <img src="1000364143.jpg" alt="Traditional Green and Gold" class="carousel-slide" />
+        <!-- 3. Purple & Blue Silk Saree -->
+        <img src="1000364139.jpg" alt="Elegant Silk Saree Smile" class="carousel-slide" />
+        <!-- 4. Cafe Hangout -->
+        <img src="1000364155.jpg" alt="Cafe Celebration Moments" class="carousel-slide" />
+        <!-- 5. Traditional Celebration Selfie -->
+        <img src="1000364152.jpg" alt="Festive Traditional Selfie" class="carousel-slide" />
+        <!-- 6. Festive Smiles -->
+        <img src="1000364146.jpg" alt="Traditional Celebration" class="carousel-slide" />
+        <!-- 7. Festive Together -->
+        <img src="1000364149.jpg" alt="Joyful Festive Memory" class="carousel-slide" />
+        <!-- 8. Monochrome Happy Birthday Tribute -->
+        <img src="1000364136.jpg" alt="Happy Birthday Swathi" class="carousel-slide" />
+
+        <!-- Dynamic Caption Overlay -->
+        <div class="caption-overlay">
+          <span class="caption-chapter" id="captionChapter">Memory 1 of 8 • Radiant Grace</span>
+          <span class="caption-text" id="captionText">Stepping into 24 with warmth, grace, and a radiant smile ✨</span>
+        </div>
+
+        <!-- Prev / Next Controls -->
+        <button class="nav-arrow prev-btn" onclick="prevSlide(event)" aria-label="Previous">❮</button>
+        <button class="nav-arrow next-btn" onclick="nextSlide(event)" aria-label="Next">❯</button>
+
+        <!-- Mystery Gift Wrap Veil -->
+        <div class="gift-wrap-veil" id="galleryVeil">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+          <div class="veil-badge">
+            <span class="veil-badge-emoji">🎁</span>
+            <div class="veil-badge-title">Swathi's 24th Keepsake Album</div>
+            <div class="veil-badge-tap">Tap to Unwrap ✨</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots Indicator -->
+      <div class="carousel-dots">
+        <div class="dot active" onclick="goToSlide(0, event)"></div>
+        <div class="dot" onclick="goToSlide(1, event)"></div>
+        <div class="dot" onclick="goToSlide(2, event)"></div>
+        <div class="dot" onclick="goToSlide(3, event)"></div>
+        <div class="dot" onclick="goToSlide(4, event)"></div>
+        <div class="dot" onclick="goToSlide(5, event)"></div>
+        <div class="dot" onclick="goToSlide(6, event)"></div>
+        <div class="dot" onclick="goToSlide(7, event)"></div>
+      </div>
+
+      <div class="card-footer">
+        <span class="handwritten-caption">Twenty-Four & Shining Bright 🌟</span>
+        <span style="color: var(--text-soft); font-size: 0.72rem; font-weight: 700;">Swipe or Tap Arrows</span>
+      </div>
+    </div>
+
+    <!-- ==================== BIRTHDAY WISH NOTE ==================== -->
+    <div class="fairytale-note">
+      <div style="font-size: 1.65rem; margin-bottom: 6px;">💌</div>
+      <div class="note-quote">
+        “May your 24th year bring endless laughter, peaceful mornings, exciting new milestones, and every dream your heart wishes for. Keep smiling and shining just the way you do!”
+      </div>
+      <div style="font-family: 'Caveat', cursive; font-size: 1.45rem; color: var(--emerald-deep); font-weight: 800; margin-bottom: 4px;">
+        Happy 24th Birthday, Swathi! ✨
+      </div>
+      <div style="font-family: 'Caveat', cursive; font-size: 1.4rem; color: var(--plum-accent); font-weight: 800;">
+        Wishes from Jithin ✨
+      </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE 24TH BIRTHDAY CAKE ==================== -->
+    <div class="celebration-card cake-card">
+      <div class="candles-row">
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+      </div>
+
+      <div class="cake-top-tier">★ SWATHI • 24 ★</div>
+      <div class="cake-bottom-tier">MAKE A WISH</div>
+
+      <div class="cake-hint-text" id="cakeInstruction">Tap all 3 candles to blow out your 24th birthday flames! 🎂</div>
+      <div class="wish-banner-box" id="wishBanner">🎉 Wish Granted! Here's to an unforgettable 24th year, Swathi! 🌟</div>
+    </div>
+
+  </div>
+
+  <!-- Floating Music Pill -->
+  <div class="music-pill-btn" id="musicBtn" onclick="toggleMusic(event)">
+    <span class="vinyl-icon">🎵</span>
+    <div class="music-info">
+      <span class="music-track-title">Pesamale 🎶</span>
+      <span class="music-play-status" id="musicStatus">Tap to Play</span>
+    </div>
+    <div class="equalizer-bars">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+  </div>
+
+  <script>
+    let isMusicPlaying = false;
+    let autoPlayAttempted = false;
+    let isUnwrapped = false;
+    let blownCandlesCount = 0;
+
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+
+    const slidesData = [
+      {
+        chapter: "Memory 1 of 8 • Radiant Grace",
+        text: "Stepping into 24 with warmth, grace, and a radiant smile ✨"
+      },
+      {
+        chapter: "Memory 2 of 8 • Traditional Charm",
+        text: "Surrounded by nature in classic green and kasavu gold 🌿"
+      },
+      {
+        chapter: "Memory 3 of 8 • Timeless Elegance",
+        text: "Every moment shines brighter with your joyful spirit 🌸"
+      },
+      {
+        chapter: "Memory 4 of 8 • Good Times",
+        text: "Laughter, great conversations, and unforgettable hangouts ☕"
+      },
+      {
+        chapter: "Memory 5 of 8 • Festive Vibes",
+        text: "Celebrating traditions and cherished memories together 🎉"
+      },
+      {
+        chapter: "Memory 6 of 8 • Pure Joy",
+        text: "Smiles that turn ordinary days into favorite memories 💛"
+      },
+      {
+        chapter: "Memory 7 of 8 • Together Always",
+        text: "Here's to many more celebrations and adventures ahead 🌟"
+      },
+      {
+        chapter: "Memory 8 of 8 • Happy 24th Birthday",
+        text: "Wishing you the happiest 24th birthday, Swathi! 🎂🖤"
+      }
+    ];
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const captionChapter = document.getElementById('captionChapter');
+    const captionText = document.getElementById('captionText');
+
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+      captionChapter.innerText = slidesData[currentSlide].chapter;
+      captionText.innerText = slidesData[currentSlide].text;
+    }
+
+    function unwrapGallery() {
+      tryAutoPlayMusic();
+      if (!isUnwrapped) {
+        isUnwrapped = true;
+        document.getElementById('galleryVeil').classList.add('opened');
+        document.getElementById('galleryStatus').innerText = '✨ 8 Memories';
+        triggerConfetti(65);
+      }
+    }
+
+    function nextSlide(e) {
+      if (e) e.stopPropagation();
+      tryAutoPlayMusic();
+      currentSlide = (currentSlide + 1) % slidesData.length;
+      updateCarousel();
+    }
+
+    function prevSlide(e) {
+      if (e) e.stopPropagation();
+      tryAutoPlayMusic();
+      currentSlide = (currentSlide - 1 + slidesData.length) % slidesData.length;
+      updateCarousel();
+    }
+
+    function goToSlide(index, e) {
+      if (e) e.stopPropagation();
+      tryAutoPlayMusic();
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const carouselBox = document.getElementById('carouselBox');
+
+    carouselBox.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselBox.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (isUnwrapped) {
+        if (touchEndX < touchStartX - 40) nextSlide();
+        if (touchEndX > touchStartX + 40) prevSlide();
+      }
+    }, { passive: true });
+
+    // Music Controls
+    function tryAutoPlayMusic() {
+      if (!autoPlayAttempted && !isMusicPlaying) {
+        playMusic();
+        autoPlayAttempted = true;
+      }
+    }
+
+    function playMusic() {
+      if (!bgMusic) return;
+      bgMusic.play().then(() => {
+        isMusicPlaying = true;
+        musicBtn.classList.add('playing');
+        musicStatus.innerText = 'Playing';
+      }).catch(err => {
+        console.log("Waiting for user interaction to play audio:", err);
+      });
+    }
+
+    function pauseMusic() {
+      if (!bgMusic) return;
+      bgMusic.pause();
+      isMusicPlaying = false;
+      musicBtn.classList.remove('playing');
+      musicStatus.innerText = 'Paused';
+    }
+
+    function toggleMusic(e) {
+      if (e) e.stopPropagation();
+      if (isMusicPlaying) {
+        pauseMusic();
+      } else {
+        playMusic();
+      }
+    }
+
+    // Confetti Effect
+    function triggerConfetti(count = 55) {
+      if (typeof confetti !== 'undefined') {
+        confetti({
+          particleCount: count,
+          spread: 65,
+          origin: { y: 0.65 },
+          colors: ['#143d2b', '#d49a2a', '#f4be49', '#7a3558', '#52b788']
+        });
+      }
+    }
+
+    // Candle Blowing
+    function blowCandle(candleEl) {
+      tryAutoPlayMusic();
+      if (!candleEl.classList.contains('blown')) {
+        candleEl.classList.add('blown');
+        blownCandlesCount++;
+
+        if (blownCandlesCount >= 3) {
+          setTimeout(() => {
+            document.getElementById('wishBanner').style.display = 'block';
+            document.getElementById('cakeInstruction').style.display = 'none';
+            triggerConfetti(95);
+          }, 350);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
